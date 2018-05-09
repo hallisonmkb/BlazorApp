@@ -1,0 +1,21 @@
+﻿@page "/"
+
+<h1>Hello world and the date is @StartDate.ToString("dd/MM/yyyy")!</h1>
+
+Welcome to your new app.
+
+<SurveyPrompt Title="How is Blazor working for you?" />
+
+<input bind="@StartDate" format-value="dd/MM/yyyy" />
+<button onclick="@UpdateDate">Update the date</button>
+
+@*<Counter IncrementAmount="10" />*@
+
+@functions {
+public DateTime StartDate { get; set; } = DateTime.Now;
+
+void UpdateDate()
+{
+    StartDate = DateTime.Now;
+}
+}
